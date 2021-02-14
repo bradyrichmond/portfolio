@@ -1,6 +1,6 @@
 {
     "identityPoolName": "portfolio920905eb_identitypool_920905eb",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "portfo920905eb",
     "userPoolName": "portfolio920905eb_userpool_920905eb",
     "autoVerifiedAttributes": [

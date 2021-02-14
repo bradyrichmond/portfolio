@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
+
+import Notes from './features/notes/Notes';
 
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
@@ -13,7 +20,13 @@ Amplify.configure(config);
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Router>
+        <Switch>
+          <Route path='/'>
+            <Notes />
+          </Route>
+        </Switch>
+      </Router>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
