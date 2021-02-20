@@ -1,9 +1,12 @@
 body {
   background: #023047;
+  height: 100%;
+  width: 100%;
 }
 
-.App {
-  text-align: center;
+#root {
+  height: 100%;
+  width: 100%;
 }
 
 /* amplify overrides */

@@ -6,7 +6,7 @@ import { Storage } from 'aws-amplify';
 
 import { Note } from './types';
 import { getNotes, deleteNoteAsync, createNoteAsync, selectNotes } from './notesSlice';
-import '../../App.css';
+import './notes.css';
 
 const initialFormState = { name: '', description: '', image: '' };
 
@@ -45,7 +45,7 @@ const App = () => {
   }
 
   return (
-    <div className="App">
+    <div className="NotesApp">
       <h1>My Notes App</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
@@ -65,14 +65,7 @@ const App = () => {
       <div style={{marginBottom: 30}}>
         {notes && 
           notes.map(note => (
-            <div key={note.id || note.name}>
-              <h2>{note.name}</h2>
-              <p>{note.description}</p>
-              {
-                note.image && <img src={note.image} style={{width: 400}} alt="note"/>
-              }
-              <button onClick={() => deleteNote(note)}>Delete note</button>
-            </div>
+            <NoteItem note={note} deleteNote={deleteNote} />
           ))
         }
       </div>
@@ -81,6 +74,26 @@ const App = () => {
       </div>
     </div>
   );
+}
+
+interface NoteProps {
+  note: Note,
+  deleteNote: Function
+}
+
+const NoteItem = (props: NoteProps) => {
+  const note = props.note;
+  const deleteNote = props.deleteNote;
+  return (
+    <div key={note.id || note.name} className='note-item'>
+      <h2>{note.name}</h2>
+      <p>{note.description}</p>
+      {
+        note.image && <p><img src={note.image} style={{width: 400}} alt="note"/></p>
+      }
+      <button onClick={() => deleteNote(note)}>Delete note</button>
+    </div>
+  )
 }
 
 export default withAuthenticator(App);

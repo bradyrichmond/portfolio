@@ -1,0 +1,65 @@
+.Landing {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lower{
+    height: 10rem;
+    text-align: center;
+}
+
+.profile-image-outer {
+    border: 3px solid rgb(142,202,230);
+    padding: 1rem;
+    border-radius: 30rem;
+    animation: pulse 60s alternate linear infinite;
+}
+
+.profile-image-container {
+    overflow: hidden;
+    background: url('./images/profilePic.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 30rem;
+}
+
+/* animations */
+/* violet, indigo, blue, green, yellow, orange, red */
+
+@keyframes pulse {
+    0% {
+        border: 3px solid rgb(142,202,230);
+    }
+    15% {
+        border: 3px solid violet;
+    }
+    30% {
+        border: 3px solid indigo;
+    }
+    45% {
+        border: 3px solid blue;
+    }
+    60% {
+        border: 3px solid green;
+    }
+    75% {
+        border: 3px solid yellow;
+    }
+    90% {
+        border: 3px solid orange;
+    }
+    100% {
+        border: 3px solid red;
+    }
+}
