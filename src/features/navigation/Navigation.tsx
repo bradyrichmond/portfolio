@@ -17,22 +17,22 @@ const Home = () => {
             </div>
             <nav>
                 <Link to="/">
-                    <span className='nav-icon-container'>
+                    <div className='nav-icon-container'>
                         <AiFillHome className='nav-icon'/>
-                    </span>
-                    <span className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>Home</span>
+                    </div>
+                    <div className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>Home</div>
                 </Link>
                 <Link to="/notes">
-                    <span className='nav-icon-container'>
+                    <div className='nav-icon-container'>
                         <AiFillLayout className='nav-icon'/>
-                    </span>
-                    <span className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>Portfolio</span>
+                    </div>
+                    <div className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>Portfolio</div>
                 </Link>
                 <a href="https://www.linkedin.com/in/bradyrichmond/">
-                    <span className='nav-icon-container'>
+                    <div className='nav-icon-container'>
                         <AiFillLinkedin className='nav-icon'/>
-                    </span>
-                    <span className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>LinkedIn</span>
+                    </div>
+                    <div className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>LinkedIn</div>
                 </a>
             </nav>
         </div>
