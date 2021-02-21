@@ -1,28 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { AiFillLinkedin, AiFillHome, AiFillLayout } from "react-icons/ai";
+import { AiFillLinkedin, AiFillHome, AiFillLayout, AiOutlineDoubleLeft } from "react-icons/ai";
+import './navigation.css';
 
 const Home = () => {
+    const [navCollapsed, setNavCollapsed] = useState(false);
+
+    const collapseText = () => {
+        setNavCollapsed(!navCollapsed);
+    }
+
     return (
-        <div className='navigation'>
+        <div className={`navigation${navCollapsed ? ' collapsed' : ''}`}>
+            <div className={`collapse${navCollapsed ? ' collapsed' : ''}`} onClick={collapseText}>
+                <AiOutlineDoubleLeft style={{color: 'rgb(20, 33, 61)', fontSize: '2rem'}}/>
+            </div>
             <nav>
                 <Link to="/">
-                    <span style={{flex: 1}}>
-                        <AiFillHome style={{color: 'rgb(20, 33, 61)', marginRight: '1rem'}}/>
+                    <span className='nav-icon-container'>
+                        <AiFillHome className='nav-icon'/>
                     </span>
-                    <span className='navText'>Home</span>
+                    <span className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>Home</span>
                 </Link>
                 <Link to="/notes">
-                    <span style={{flex: 1}}>
-                        <AiFillLayout style={{color: 'rgb(20, 33, 61)', marginRight: '1rem'}}/>
+                    <span className='nav-icon-container'>
+                        <AiFillLayout className='nav-icon'/>
                     </span>
-                    <span className='navText'>Portfolio</span>
+                    <span className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>Portfolio</span>
                 </Link>
                 <a href="https://www.linkedin.com/in/bradyrichmond/">
-                    <span style={{flex: 1}}>
-                        <AiFillLinkedin style={{color: 'rgb(20, 33, 61)', marginRight: '1rem'}}/>
+                    <span className='nav-icon-container'>
+                        <AiFillLinkedin className='nav-icon'/>
                     </span>
-                    <span className='navText'>LinkedIn</span>
+                    <span className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>LinkedIn</span>
                 </a>
             </nav>
         </div>

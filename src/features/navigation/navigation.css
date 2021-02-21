@@ -1,0 +1,73 @@
+.navigation {
+    background: rgb(252, 163, 17);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-right: 5px solid rgb(229, 229, 229);
+    width: 18rem;
+    transition: all 1s linear;
+}
+
+.navigation.collapsed {
+    width: 5rem;
+    transition: all 1s linear;
+}
+
+nav {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    padding-bottom: 2rem;
+    color: rgb(20, 33, 61);
+    text-decoration: none;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.collapse {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+    padding-top: 2rem;
+}
+
+.collapse svg {
+    transform: rotate(0turn);
+    transition: all 1s linear;
+}
+
+.collapse.collapsed svg{
+    transform: rotate(0.5turn);
+    transition: all 1s linear;
+}
+
+.collapse:hover {
+    cursor: pointer;
+}
+
+.nav-icon-container {
+    flex: 1;
+}
+
+.nav-icon {
+    color: rgb(20, 33, 61);
+    margin-right: 2rem;
+}
+
+.nav-text {
+    width: 10rem;
+    overflow: hidden;
+    transition: all 1s linear;
+}
+
+.nav-text.collapsed {
+    width: 0;
+    transition: all 1s linear;
+}
