@@ -7,7 +7,7 @@ import {
   } from "react-router-dom";
 import Landing from '../landing/Landing';
 import Navigation from '../navigation/Navigation';
-import Notes from '../notes/Notes';
+import Portfolio from '../portfolio/Portfolio';
 import './home.css';
 
 const Home = () => {
@@ -20,8 +20,8 @@ const Home = () => {
                         <Route exact path='/'>
                             <Landing />
                         </Route>
-                        <Route path='/notes'>
-                            <Notes />
+                        <Route path='/portfolio'>
+                            <Portfolio />
                         </Route>
                     </Switch>
                 </div>

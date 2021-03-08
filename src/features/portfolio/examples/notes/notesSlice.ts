@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { AppThunk, RootState } from '../../app/store';
+import { AppThunk, RootState } from '../../../../app/store';
 import { API, Storage } from 'aws-amplify';
-import { listNotes } from '../../graphql/queries';
-import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from '../../graphql/mutations';
+import { listNotes } from './graphql/queries';
+import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { Note } from './types'
 
 interface NotesState {

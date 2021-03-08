@@ -22,7 +22,7 @@ const Home = () => {
                     </div>
                     <div className={`nav-text${navCollapsed ? ' collapsed' : ''}`}>Home</div>
                 </Link>
-                <Link to="/notes">
+                <Link to="/portfolio">
                     <div className='nav-icon-container'>
                         <AiFillLayout className='nav-icon'/>
                     </div>
