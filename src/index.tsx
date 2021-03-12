@@ -8,10 +8,6 @@ import * as serviceWorker from './serviceWorker';
 
 import Home from './features/home/Home';
 
-import Amplify from 'aws-amplify';
-import config from './aws-exports';
-Amplify.configure(config);
-
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
